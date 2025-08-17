@@ -1,0 +1,30 @@
+.info-box {
+  display: flex;
+  align-items: center;
+  background: #7fd0d3;   /* warna background sama seperti contoh */
+  padding: 6px 12px;
+  border-radius: 10px;
+  max-width: 320px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.info-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.info-text {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #111;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #111;
+}
