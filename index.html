@@ -1,92 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="Logo Web.png">
-<link rel="shortcut icon" type="image/png" href="Logo Web.png">
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Rute: Gedung Laboratorium Riset Terpadu</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --gold:#FFD700;
-    --gold-2:#FFC107;
-    --bg:#f6f7fb;
-    --card-bg: rgba(255,255,255,0.9);
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    min-height:100vh;
-    font-family:'Poppins',sans-serif;
-    background: linear-gradient(135deg,#e9f2ff 0%, #f6f7fb 60%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
-    color:#111;
-  }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Logo Web.png">
+  <link rel="shortcut icon" type="image/png" href="Logo Web.png">
 
-  .card{
-    width:100%;
-    max-width:820px;
-    background:var(--card-bg);
-    border-radius:14px;
-    padding:22px;
-    box-shadow:0 10px 30px rgba(18,38,63,0.08);
-    text-align:center;
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rute: Gedung Laboratorium Riset Terpadu</title>
 
-  header h1{
-    margin:0 0 6px 0;
-    font-size:1.45rem;
-    color: #222;
-    letter-spacing:0.2px;
-  }
-  header p{
-    margin:0 0 18px 0;
-    color:#333;
-    opacity:0.85;
-    font-size:0.98rem;
-  }
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  .btn{
-    background:linear-gradient(90deg,var(--gold),var(--gold-2));
-    border:none;
-    color:#061014;
-    padding:12px 20px;
-    border-radius:10px;
-    font-weight:600;
-    cursor:pointer;
-    box-shadow:0 6px 18px rgba(0,0,0,0.12);
-    transition:transform .15s ease, box-shadow .15s ease;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-  }
-  .btn:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(0,0,0,0.14); }
-
-  .map-wrap{
-    width:100%;
-    border-radius:10px;
-    overflow:hidden;
-    margin-top:16px;
-    height:420px;
-  }
-  iframe{
-    width:100%;
-    height:100%;
-    border:0;
-    display:block;
-  }
-
-  @media (max-width:520px){
-    .card{padding:16px;}
-    header h1{font-size:1.2rem;}
-    .map-wrap{height:320px;}
-  }
-</style>
+  <!-- CSS  -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="logo.css">
 </head>
 <body>
 
@@ -105,31 +33,7 @@
   </div>
 </div>
 
-<script>
-  const destinationLat = -7.763638764594745;
-  const destinationLng = 110.40950300978199;
-
-  const routeBtn = document.getElementById('routeBtn');
-
-  routeBtn.addEventListener('click', () => {
-    if (!navigator.geolocation) {
-      alert('Browser Anda tidak mendukung Geolocation.');
-      return;
-    }
-    navigator.geolocation.getCurrentPosition(
-      pos => {
-        const uLat = pos.coords.latitude;
-        const uLng = pos.coords.longitude;
-        const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${uLat},${uLng}&destination=${destinationLat},${destinationLng}&travelmode=driving`;
-        window.open(mapsUrl, '_blank');
-      },
-      err => {
-        alert('Gagal mendapatkan lokasi. Pastikan izin lokasi diaktifkan.');
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-    );
-  });
-</script>
-
+<!-- JS  -->
+<script src="script.js"></script>
 </body>
 </html>
